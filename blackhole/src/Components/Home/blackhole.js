@@ -12,9 +12,9 @@ const Blackhole = props => {
 
 Blackhole.defaultProps = {
   title: '',
-  category: '',
-  description: ''
+  text: '',
+  category: ''
 };
 
-export default Smurf;
+export default Blackhole;
 

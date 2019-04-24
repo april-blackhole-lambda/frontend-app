@@ -1,29 +1,28 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-class SmurfForm extends Component {
+class Blackholeform extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      age: '',
-      height: ''
+      title: '',
+      text: '',
+      category: ''
     };
   }
 
-  addSmurf = event => {
+  addBlackhole = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
-    const newSmurf = {
-      name: this.state.name,
-      age: this.state.age,
-      height: this.state.height
+    const newBlackhole = {
+      title: this.state.title,
+      text: this.state.text,
+      category: this.state.category
     }
     axios
-    .post('http://localhost:3333/smurfs', newSmurf)
+    .post('http://localhost:3000/Blackholes', newBlackhole)
     .then(response => {
       console.log(response.data);    
-      this.props.updateSmurfs(response.data);
+      this.props.updateBlackholes(response.data);
       this.props.history.push('/')
     })
     .catch(err => console.log(err));
@@ -44,18 +43,21 @@ class SmurfForm extends Component {
             value={this.state.title}
             name="title"
           />
+
+          <input
+            onChange={this.handleInputChange}
+            placeholder="text"
+            value={this.state.text}
+            name="text"
+          />
+
           <input
             onChange={this.handleInputChange}
             placeholder="category"
             value={this.state.category}
             name="category"
           />
-          <input
-            onChange={this.handleInputChange}
-            placeholder="description"
-            value={this.state.description}
-            name="description"
-          />
+          
           <button type="submit">Add to the orbit</button>
         </form>
       </div>
