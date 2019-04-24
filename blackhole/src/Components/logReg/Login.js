@@ -2,24 +2,21 @@ import React from 'react';
 import axios from 'axios';
 
 
-
+URL = 'https://build-week-blackhole.herokuapp.com/api';
 class Login extends React.Component{
     constructor(props){
         super(props);
-        this.setState = {
-            user: {
+        this.State = {
                 username: '',
-                password: '',
-            },
-            message: ''
+                password: ''
         }
     }
 
     handleChanges = e => {
         e.preventDefault();
-        this.setState.user({[e.target.name]: e.target.value});
+        this.setState({[e.target.name]: e.target.value});
     }
-     URL = 'https://build-week-blackhole.herokuapp.com/api';
+    
     loginSite = e => {
         e.preventDefault();
         axios.post(`${URL}/login`, this.state.user)
@@ -35,10 +32,10 @@ class Login extends React.Component{
         .catch(err => {
           console.log("Err", err);
             this.setState({
-                user: {
+                
                     username: '',
                     password: ''
-                }
+                
             })
             console.log("Catch Error", err);
         })         
@@ -54,20 +51,22 @@ class Login extends React.Component{
                 type="text"
                 id="username"
                 name="username"
-                value={this.state.user.username}
+                value={this.username}
                 onChange={this.handleChanges}
+                placeholder = "Username"
               />
               <input
                 type="password"
                 id="password"
                 name="password"
-                value={this.state.user.password}
+                value={this.password}
                 onChange={this.handleChanges}
+                placeholder = "Password"
               />
               <button type="submit">Submit</button>
             </form>
-            {this.state.message
-              ? (<h4>{this.state.message}</h4>)
+            {this.message
+              ? (<h4>{this.message}</h4>)
               : undefined
             }
           </div>

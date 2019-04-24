@@ -1,6 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 
+
+
+URL = 'https://build-week-blackhole.herokuapp.com/api';
+
 class Registration extends React.Component{
     constructor(props){
         super(props);
@@ -15,7 +19,6 @@ class Registration extends React.Component{
         this.setState({ [e.target.name]: e.target.value});
     }
 
-    URL = 'https://build-week-blackhole.herokuapp.com/api';
     signUp = e => {
         e.preventDefault();
 
