@@ -19,7 +19,7 @@ class Login extends React.Component{
     
     loginSite = e => {
         e.preventDefault();
-        axios.post(`${URL}/login`, this.state.user)
+        axios.post(`${URL}/login`, this.state)
         .then(response => {
             console.log("Response",response.data);
 
