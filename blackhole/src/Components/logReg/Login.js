@@ -19,12 +19,12 @@ class Login extends React.Component{
         e.preventDefault();
         this.setState.user({[e.target.name]: e.target.value});
     }
-
+     URL = 'https://build-week-blackhole.herokuapp.com/api';
     loginSite = e => {
         e.preventDefault();
         axios.post(`${URL}/login`, this.state.user)
         .then(response => {
-            console.log(response.data);
+            console.log("Response",response.data);
 
             if (response.status === 200 && response.data) {
                 localStorage.setItem('token', response.data.token);
@@ -33,6 +33,7 @@ class Login extends React.Component{
             }
         })
         .catch(err => {
+          console.log("Err", err);
             this.setState({
                 user: {
                     username: '',
@@ -47,7 +48,7 @@ class Login extends React.Component{
         return (
           <div className='login'>
             <h1>Login Page</h1>
-            <form id='login' onSubmit={this.submitHandler}>
+            <form id='login' onSubmit={this.loginSite}>
             
               <input
                 type="text"
@@ -70,7 +71,7 @@ class Login extends React.Component{
               : undefined
             }
           </div>
-        )
+        );
       }
 }
  

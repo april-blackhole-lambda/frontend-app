@@ -1,4 +1,6 @@
-
+import React from 'react';
+import Login from './Login';
+import Registration from './Registration';
 
 class LogRegView extends React.Component {
     constructor (props) {
