@@ -5,7 +5,7 @@ const Blackhole = props => {
     <div className="Blackhole">
       <h3>{props.title}</h3>
       <strong>{props.category} tall</strong>
-      <p>{props.description} Tell the blackhole anything</p>
+      <p>{props.text} Tell the blackhole anything</p>
     </div>
   );
 };
