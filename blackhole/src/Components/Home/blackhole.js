@@ -4,17 +4,17 @@ const Blackhole = props => {
   return (
     <div className="Blackhole">
       <h3>{props.title}</h3>
-      <strong>{props.category} tall</strong>
-      <p>{props.description} Tell the blackhole anything</p>
+      <strong>{props.category} Subject</strong>
+      <p>{props.text} Tell the blackhole anything</p>
     </div>
   );
 };
 
 Blackhole.defaultProps = {
   title: '',
-  category: '',
-  description: ''
+  text: '',
+  category: ''
 };
 
-export default Smurf;
+export default Blackhole;
 
