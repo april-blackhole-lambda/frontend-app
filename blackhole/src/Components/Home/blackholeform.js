@@ -7,7 +7,8 @@ class Blackholeform extends Component {
     this.state = {
       title: '',
       text: '',
-      category: ''
+      category: '',
+      _id: null
     };
   }
 
@@ -19,7 +20,7 @@ class Blackholeform extends Component {
       category: this.state.category
     }
     axios
-    .post('http://localhost:3000/Blackholes', newBlackhole)
+    .post('https://build-week-blackhole.herokuapp.com/api/notes/', newBlackhole)
     .then(response => {
       console.log(response.data);    
       this.props.updateBlackholes(response.data);
@@ -65,4 +66,4 @@ class Blackholeform extends Component {
   }
 }
 
-export default blackholeform;
+export default Blackholeform;

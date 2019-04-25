@@ -29,4 +29,4 @@ Blackhole.defaultProps = {
  blackholes: [],
 };
 
-export default blackholes;
+export default Blackholes;
