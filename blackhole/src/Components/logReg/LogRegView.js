@@ -3,6 +3,8 @@ import Login from './Login';
 import Registration from './Registration';
 import {Route, Switch} from 'react-router-dom';
 import LogRegNav from './LogRegNav';
+import '../logReg/logReg.css';
+import '../../App.css';
 
 class LogRegView extends React.Component {
     constructor (props) {
