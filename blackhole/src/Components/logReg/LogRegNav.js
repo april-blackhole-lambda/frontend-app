@@ -9,8 +9,8 @@ const LogRegNav =() => {
     return (
         <div id = "nav">
             
-                <NavLink to="/login" component={Login}> Log In </NavLink>
-                <NavLink to="/register" component={Registration}> Sign Up</NavLink>
+                <NavLink to="/login"> Log In </NavLink>
+                <NavLink to="/register"> Sign Up</NavLink>
         
         </div>
     );
