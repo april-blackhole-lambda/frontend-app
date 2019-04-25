@@ -17,6 +17,27 @@ class LogRegView extends React.Component {
             <div>
               <LogRegNav />
 
+ 
+             
+ <Switch>
+                    <Route exact path="/login"
+                        render={(props) => (
+                            <Login
+                            {...props}
+                                handleChanges={this.props.handleChange}
+                                signIn={this.props.signIn}
+                                username={this.props.username}
+                                password={this.props.password}
+                                 />
+                        )} />
+                    
+                    <Route exact path='/register' render={(props) => (
+                        <Registration {...props} />
+                    )}
+                        />
+     
+
+                </Switch> 
 
              
                 </div>
