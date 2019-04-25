@@ -1,8 +1,8 @@
  import React from 'react';
- import Blackholeform from './Home/Blackholeform';
-import Blackholes from "./Home/Blackholes"
+ import Blackholeform from './Home/blackholeform';
+import Blackholes from "./Home/blackholes"
  import axios from 'axios';
- import {Route, Switch, NavLink} from 'react-router-dom';
+ import {Route, NavLink} from 'react-router-dom';
 
 class AppHome extends React.Component{
 constructor(props) {

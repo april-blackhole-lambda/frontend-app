@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import '../../App.css';
 
 
 
@@ -44,9 +45,9 @@ class Registration extends React.Component{
 }
 render() {
     return (
-        <div>
+        <div className = 'logReg'>
             <h1> Register With BlackHole </h1>
-            <form id = "login" onSubmit = {this.signUp} >
+            <form id = "logReg" onSubmit = {this.signUp} >
            
                 <input
                     placeholder="Username"

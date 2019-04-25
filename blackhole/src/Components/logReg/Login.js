@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import '../../App.css';
 
 URL = 'https://build-week-blackhole.herokuapp.com/api';
 class Login extends React.Component{
@@ -45,9 +45,9 @@ class Login extends React.Component{
 
     render() {
         return (
-          <div className='login'>
+          <div className='logReg'>
             <h1>Login Page</h1>
-            <form id='login' onSubmit={this.loginSite}>
+            <form id='logReg' onSubmit={this.loginSite}>
             
               <input
                 type="text"
