@@ -30,6 +30,7 @@ class Registration extends React.Component{
         })
         .then(response => {
             console.log("Response: ", response);
+            this.props.history.push("/login");
             
         })
         .catch(err => {
