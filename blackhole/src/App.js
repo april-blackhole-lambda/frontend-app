@@ -6,7 +6,7 @@ import Blackholeform from './Components/Home/Blackholeform';
 import Blackholes from './Components/Home/Blackholes';
 import axios from 'axios';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,49 +23,33 @@ class App extends React.Component {
     .catch(err=>console.log(err))
   }
 
-  componentDidUpdate(prevProps, prevState) {
-  if (prevState.title === '' || this.props.match.params.id !== prevProps.match.params.id) {
-    const post = this.props.post.find(
-      post => `${post._id}` === this.props.match.params.id
-    );
-    this.setState(post);
-  }
-  }
-handleEditSubmit = event => {
-  event.preventDefault();
-  this.props.onSubmit({
-    title: this.state.title,
-    text: this.state.text
-  },
-  this.state._id);
-  this.props.history.push('/');
-  };
-}
   updateblackholes = blackholes => {
     this.setState({
       blackholes
     })
   }
 
+  handleSubmit = post => {
+    axios.post(,post)
+    .then(() => this.updatePosts())
+    .catch(err => console.log(err));
+  }
+
+  deletePost = id => {
+    axios.delete($`{https://build-week-blackhole.herokuapp.com/api/notes/:id}`)
+    .then(() => this.updatePosts())
+    .catch(err => console.log(err));
+  }
+
+  editPost = ('https://build-week-blackhole.herokuapp.com/api/notes/:id', id) => {
+    axios
+    .put()
+    .then(() => this.updatePosts())
+    .catch(err => console.log(err));
+  }
+
   render() {
     return (
-      <div className='edit-view'>
-      <form onSubmit={this.handleEditSubmit}>
-      <h2>Edit</h2>
-      <input
-      type='text'
-      name='title'
-      placeholder='post title'
-      value={this.state.title}
-      onChange={this.handleInputChange}
-      required/>
-      <text
-      name='textBody'
-      placeholder='post.content'
-      value={this.state.textBody}
-      onChange={this.handleInputChange}
-      />
-      <button className='btn' type='submit'>Update</button>
       <div className="App">
       <div className ='Nav'>
           <NavLink className = 'nav-item'to='/'>Home</NavLink>
@@ -86,7 +70,6 @@ handleEditSubmit = event => {
         <Blackholes {...props} blackholes={this.state.blackholes} />
       )}
       />
-      </form>
       </div>
     );
   }
