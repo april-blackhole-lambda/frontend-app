@@ -17,10 +17,19 @@ class Blackholeform extends Component {
     const newBlackhole = {
       title: this.state.title,
       text: this.state.text,
-      category: this.state.category
+      category: this.state.category,
+      user_id: localStorage.getItem('user_id')
     }
-    axios
-    .post('https://build-week-blackhole.herokuapp.com/api/notes/', newBlackhole)
+
+const authorization = localStorage.getItem("token");
+
+ axios.create({
+    headers: {
+      authorization: `${authorization}`,
+      "Access-Control-Allow-Origin": "*"
+    }
+  })
+    .post('https://build-week-blackhole.herokuapp.com/api/notes/',newBlackhole)
     .then(response => {
       console.log(response.data);    
       this.props.updateBlackholes(response.data);

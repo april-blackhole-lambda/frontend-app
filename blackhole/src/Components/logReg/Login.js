@@ -25,6 +25,7 @@ class Login extends React.Component{
 
             if (response.status === 200 && response.data) {
                 localStorage.setItem('token', response.data.token);
+                localStorage.setItem('user_id', response.data.user_id);
             } else {
                 throw new Error('Incorrect Login Credentials');
             }

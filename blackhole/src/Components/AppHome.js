@@ -12,7 +12,15 @@ constructor(props) {
    };
    }
    componentDidMount(){
-       axios.get('https://build-week-blackhole.herokuapp.com/api/notes/')
+    const authorization = localStorage.getItem("token");
+
+    axios.create({
+       headers: {
+         "Content-Type": "application/json",
+         authorization: `${authorization}`,
+         "Access-Control-Allow-Origin": "*"
+       }
+     }).get('https://build-week-blackhole.herokuapp.com/api/notes/')
     .then((response) => {
 
      console.log(response.data)
@@ -21,17 +29,12 @@ constructor(props) {
     .catch(err=>console.log(err))
   }
 
-  updateblackholes = blackholes => {
+  updateblackholes = blackhole => {
     this.setState({
-      blackholes
+      blackholes: [...this.state.blackholes, blackhole]
     })
   }
 
-  handleSubmit = post => {
-    axios.post(`https://build-week-blackhole.herokuapp.com/api/notes/`,post)
-    .then(() => this.updatePosts())
-    .catch(err => console.log(err));
-  }
 
   deletePost = id => {
     axios.delete(`https://build-week-blackhole.herokuapp.com/api/notes/${id}`)
@@ -54,7 +57,7 @@ constructor(props) {
         render={(props) =>(
         <Blackholeform {...props}
         blackholes={this.state.blackholes}
-        updateBlackholes={this.updateBlackholes}
+        updateBlackholes={this.updateblackholes}
         />
       )}
       />
