@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Blackhole from './Blackhole';
+import Blackhole from './blackhole';
 
 class Blackholes extends Component {
   render() {
