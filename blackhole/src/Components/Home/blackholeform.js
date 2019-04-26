@@ -31,7 +31,7 @@ const authorization = localStorage.getItem("token");
   })
     .post('https://build-week-blackhole.herokuapp.com/api/notes/',newBlackhole)
     .then(response => {
-      console.log(response.data);    
+      console.log("Response!!!",response.data);    
       this.props.updateBlackholes(response.data);
       this.props.history.push('/')
     })
