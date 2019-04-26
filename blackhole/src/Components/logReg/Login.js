@@ -25,10 +25,12 @@ class Login extends React.Component{
 
             if (response.status === 200 && response.data) {
                 localStorage.setItem('token', response.data.token);
+                this.props.history.push("/blackholes");
             } else {
                 throw new Error('Incorrect Login Credentials');
             }
         })
+        
         .catch(err => {
           console.log("Err", err);
             this.setState({
