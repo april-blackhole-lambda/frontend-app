@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Blackhole from './blackhole';
+import Blackhole from './Blackhole';
 
 class Blackholes extends Component {
   render() {
@@ -15,6 +15,7 @@ class Blackholes extends Component {
                 id={blackhole.id}
                 category={blackhole.category}
                 description={blackhole.text}
+                days_to_destruct={blackhole.days_to_destruct}
                 key={blackhole.id}
               />
             );

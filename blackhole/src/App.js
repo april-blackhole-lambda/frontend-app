@@ -8,8 +8,8 @@ import Authenticate from './Components/logReg/Authentication';
 // import Login from './Components/logReg/Login';
 // import LogRegNav from './Components/logReg/LogRegNav';
 import {withRouter} from 'react-router';
-import AppHome from './Components/AppHome';
-;
+import AppHome from './Components/Home/AppHome';
+const Auth = Authenticate(AppHome)(LogRegView);
 class App extends React.Component {
  
  
@@ -30,6 +30,6 @@ class App extends React.Component {
   }
 }
 
-const Auth = Authenticate(AppHome)(LogRegView);
+
 
 export default withRouter(App);
