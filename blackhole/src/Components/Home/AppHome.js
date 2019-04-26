@@ -1,6 +1,6 @@
  import React from 'react';
- import Blackholeform from './Blackholeform';
-import Blackholes from "./Blackholes"
+ import Blackholeform from './blackholeform';
+import Blackholes from "./blackholes"
  import axios from 'axios';
  import {Route, NavLink} from 'react-router-dom';
  import moment from 'moment'
