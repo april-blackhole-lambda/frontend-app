@@ -8,6 +8,7 @@ class Blackholeform extends Component {
       title: '',
       text: '',
       category: '',
+      days_to_destruct: '',
       _id: null
     };
   }
@@ -18,6 +19,7 @@ class Blackholeform extends Component {
       title: this.state.title,
       text: this.state.text,
       category: this.state.category,
+      days_to_destruct: new Date().getTime()+this.state.days_to_destruct*1000*60*60*24,
       user_id: localStorage.getItem('user_id')
     }
 
@@ -52,6 +54,7 @@ const authorization = localStorage.getItem("token");
             placeholder="title"
             value={this.state.title}
             name="title"
+            required
           />
 
           <input
@@ -59,6 +62,7 @@ const authorization = localStorage.getItem("token");
             placeholder="text"
             value={this.state.text}
             name="text"
+            required
           />
 
           <input
@@ -66,6 +70,15 @@ const authorization = localStorage.getItem("token");
             placeholder="category"
             value={this.state.category}
             name="category"
+            required
+          />
+
+<input
+            onChange={this.handleInputChange}
+            placeholder="days to destruct"
+            value={this.state.days_to_destruct}
+            name="days_to_destruct"
+            required
           />
           
           <button type="submit">Add to the orbit</button>

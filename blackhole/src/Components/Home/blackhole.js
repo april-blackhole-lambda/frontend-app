@@ -13,8 +13,13 @@ const Blackhole = props => {
 Blackhole.defaultProps = {
   title: '',
   text: '',
-  category: ''
+  category: '',
+  days_to_destruct: ''
 };
+
+render () {
+  
+}
 
 export default Blackhole;
 
