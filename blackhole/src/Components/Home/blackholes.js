@@ -12,7 +12,7 @@ class Blackholes extends Component {
             return (
               <Blackhole
                 title={blackhole.title}
-                
+                deletePost={this.props.deletePost}
                 id={blackhole.id}
                 category={blackhole.category}
                 text={blackhole.text}
