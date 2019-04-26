@@ -80,19 +80,18 @@ constructor(props) {
 
 
   deletePost = id => {
-    axios.delete(`https://build-week-blackhole.herokuapp.com/api/notes/${id}`)
-    .then(() => axios.create({
+    axios.create({
       headers: {
         "Content-Type": "application/json",
         authorization: `${localStorage.getItem('token')}`,
         "Access-Control-Allow-Origin": "*"
       }
-    }).get('https://build-week-blackhole.herokuapp.com/api/notes/')
+    }).delete(`https://build-week-blackhole.herokuapp.com/api/notes/${id}`)
    .then((response) => {
 
     console.log(response.data)
      this.setState(() =>({blackholes: response.data}))})
-    .catch(err => console.log(err)));
+    .catch(err => console.log(err))
    }
 
 
@@ -117,7 +116,7 @@ constructor(props) {
         <Route
         exact path="/"
         render={(props) =>(
-        <Blackholes {...props} blackholes={this.state.blackholes} />
+        <Blackholes {...props} blackholes={this.state.blackholes} deletePost={this.deletePost}/>
       )}
       />
 
