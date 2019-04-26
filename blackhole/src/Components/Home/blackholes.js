@@ -17,6 +17,8 @@ class Blackholes extends Component {
                 description={blackhole.text}
                 days_to_destruct={blackhole.days_to_destruct}
                 key={blackhole.id}
+                deletePost={blackhole.deletePost}
+                updateblackholes={blackhole.updateblackholes}
               />
             );
           })}

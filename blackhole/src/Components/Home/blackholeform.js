@@ -80,7 +80,7 @@ const authorization = localStorage.getItem("token");
             name="days_to_destruct"
             required
           />
-          
+         
           <button type="submit">Add to the orbit</button>
         </form>
       </div>

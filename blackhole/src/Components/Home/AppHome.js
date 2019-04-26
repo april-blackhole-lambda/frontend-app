@@ -1,9 +1,11 @@
  import React from 'react';
+ import '../../App.css';
  import Blackholeform from './Blackholeform';
 import Blackholes from "./Blackholes"
  import axios from 'axios';
  import {Route, NavLink} from 'react-router-dom';
  import moment from 'moment'
+
 
 class AppHome extends React.Component{
 constructor(props) {
@@ -104,6 +106,8 @@ constructor(props) {
            <div className ='Nav'>
           <NavLink className = 'nav-item'to='/'>Home</NavLink>
           <NavLink className = 'nav-item'to='/blackholeform'>Create Note</NavLink>
+          
+        
       </div>
         <Route
          path="/blackholeform"
@@ -111,13 +115,18 @@ constructor(props) {
         <Blackholeform {...props}
         blackholes={this.state.blackholes}
         updateBlackholes={this.updateblackholes}
+        
         />
       )}
       />
         <Route
         exact path="/"
         render={(props) =>(
-        <Blackholes {...props} blackholes={this.state.blackholes} />
+        <Blackholes {...props} 
+        blackholes={this.state.blackholes}
+         deletePost={this.deletePost}
+         updateblackholes={this.updateblackholes}
+         />
       )}
       />
 

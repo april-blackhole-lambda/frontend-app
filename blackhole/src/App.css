@@ -85,3 +85,13 @@ button{
     transition: 1s ease;
 
     }
+
+.blackhole{
+  color: white;
+  border: 1px solid white;
+}
+
+.nav-item{
+display: flex;
+justify-content: space-evenly;
+}
