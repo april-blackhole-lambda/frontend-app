@@ -17,9 +17,6 @@ Blackhole.defaultProps = {
   days_to_destruct: ''
 };
 
-render () {
-  
-}
 
 export default Blackhole;
 
