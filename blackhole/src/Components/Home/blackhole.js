@@ -6,7 +6,7 @@ const Blackhole = props => {
       <h3>Title: {props.title}</h3>
       <strong>Category: {props.category}</strong>
       <p>{props.text}</p>
-    <button onClick={()=>props.deletePost(props.id)}>Delete</button>
+    
     </div>
   );
 };
