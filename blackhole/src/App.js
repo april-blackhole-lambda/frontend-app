@@ -2,13 +2,14 @@
 import React from 'react';
 // import {Route, Switch, NavLink} from 'react-router-dom';
 import './App.css';
-import LogRegView from './components/logReg/LogRegView';
+import LogRegView from './Components/logReg/LogRegView';
 // import Registration from './Components/logReg/Registration';
-import Authenticate from './components/logReg/Authentication';
+import Authenticate from './Components/logReg/Authentication';
 // import Login from './Components/logReg/Login';
 // import LogRegNav from './Components/logReg/LogRegNav';
 import {withRouter} from 'react-router';
-import AppHome from './components/AppHome';
+import AppHome from './Components/AppHome';
+;
 class App extends React.Component {
  
  
