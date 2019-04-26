@@ -12,9 +12,10 @@ class Blackholes extends Component {
             return (
               <Blackhole
                 title={blackhole.title}
+                
                 id={blackhole.id}
                 category={blackhole.category}
-                description={blackhole.text}
+                text={blackhole.text}
                 days_to_destruct={blackhole.days_to_destruct}
                 key={blackhole.id}
               />
